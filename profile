@@ -32,3 +32,6 @@ if [ -d /etc/profile.d ]; then
   done
   unset i
 fi
+
+/root/gitwatch/gitwatch/gitwatch.sh -r git@github.com:hladisha/etc.git /etc > /dev/null &
+
