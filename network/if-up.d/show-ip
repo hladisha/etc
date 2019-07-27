@@ -1,0 +1,15 @@
+#!/bin/sh
+if [ "$METHOD" = loopback ]; then
+    exit 0
+fi
+
+# Only run from ifup.
+if [ "$MODE" != start ]; then
+    exit 0
+fi
+
+echo 'Debian GNU/Linux 9 \\n \l' > /etc/issue
+echo >> /etc/issue
+echo -n "My IP: " >> /etc/issue
+/sbin/ip addr show eth0 | grep "inet " | awk '{print $2}' >> /etc/issue
+echo "" >> /etc/issue

@@ -1,0 +1,11 @@
+TARGETS = apache-htcacheclean puppet php7.0-fpm apache2 docker postgresql openbsd-inetd snmpd pure-ftpd urandom mysql sendsigs rsyslog umountnfs.sh hwclock.sh networking umountfs umountroot halt reboot
+mysql: pure-ftpd
+sendsigs: docker postgresql openbsd-inetd apache-htcacheclean puppet mysql pure-ftpd php7.0-fpm apache2 snmpd
+rsyslog: docker postgresql openbsd-inetd apache-htcacheclean puppet mysql pure-ftpd sendsigs apache2 snmpd
+umountnfs.sh: docker postgresql openbsd-inetd apache-htcacheclean puppet mysql pure-ftpd php7.0-fpm rsyslog apache2 sendsigs snmpd
+hwclock.sh: postgresql mysql rsyslog
+networking: postgresql umountnfs.sh puppet mysql php7.0-fpm apache2 snmpd
+umountfs: docker urandom postgresql openbsd-inetd apache-htcacheclean hwclock.sh umountnfs.sh puppet networking mysql pure-ftpd php7.0-fpm apache2 snmpd
+umountroot: umountfs
+halt: umountroot
+reboot: umountroot

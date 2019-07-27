@@ -1,0 +1,5 @@
+#
+# no need to run apt-get install with "--no-install-recommends" anymore
+
+APT::Install-Recommends "false";
+APT::Install-Suggests "false";

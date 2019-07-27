@@ -1,0 +1,18 @@
+TARGETS = killprocs console-setup.sh rsyslog php7.0-fpm motd apache2 docker postgresql openbsd-inetd mysql dbus ssh cron rsync acpid sysstat snmpd pure-ftpd bootlogs single rc.local rmnologin
+INTERACTIVE = console-setup.sh apache2
+apache2: rsyslog
+docker: rsyslog
+postgresql: rsyslog
+openbsd-inetd: rsyslog
+mysql: rsyslog
+dbus: rsyslog
+ssh: rsyslog
+cron: rsyslog
+rsync: rsyslog
+acpid: rsyslog
+sysstat: rsyslog
+snmpd: rsyslog
+pure-ftpd: rsyslog mysql
+single: killprocs motd bootlogs
+rc.local: docker rsyslog postgresql openbsd-inetd apache2 mysql pure-ftpd php7.0-fpm motd bootlogs dbus ssh console-setup.sh cron rsync acpid sysstat snmpd
+rmnologin: docker rsyslog postgresql openbsd-inetd apache2 mysql pure-ftpd php7.0-fpm motd bootlogs dbus ssh console-setup.sh cron rsync acpid sysstat snmpd

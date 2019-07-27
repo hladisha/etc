@@ -1,0 +1,17 @@
+########################################################################
+#                                                                      #
+#           MANAGED BY PUPPET !!!!!!!!!                                #
+#           MANAGED BY PUPPET !!!!!!!!!                                #
+#           MANAGED BY PUPPET !!!!!!!!!                                #
+#           MANAGED BY PUPPET !!!!!!!!!                                #
+#           class: sources                                             #
+#                                                                      #
+########################################################################
+
+###### Debian Main Repos
+deb http://mirror.itplatforma.com/debian/ stretch main contrib non-free
+###### Debian Update Repos
+deb http://security.debian.org/ stretch/updates main contrib non-free
+deb http://archive.ubuntu.com/ubuntu stretch universe
+# deb-src http://archive.ubuntu.com/ubuntu stretch universe
+# deb-src http://archive.ubuntu.com/ubuntu stretch universe

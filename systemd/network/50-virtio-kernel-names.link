@@ -1,0 +1,10 @@
+# udev 226 introduced predictable interface names for virtio;
+# disable this for upgrades. You can remove this file if you update your
+# network configuration to move to the ens* names instead.
+# See /usr/share/doc/udev/README.Debian.gz for details about predictable
+# network interface names.
+[Match]
+Driver=virtio_net
+
+[Link]
+NamePolicy=onboard kernel
